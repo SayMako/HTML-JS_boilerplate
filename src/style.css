@@ -1,3 +1,300 @@
-div {
-  color: blue;
+body {
+  margin: 0;
+}
+
+.labelText, .dropDownText, .clearListText {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.noBorderInput {
+  padding: 0.5em;
+  border: none;
+}
+
+.dropDownStyle {
+  border: none;
+  border-bottom: thin solid lightgrey;
+  padding: 0.7em 2em 0.7em 1em;
+  width: 12em;
+  text-align-last: center;
+  -webkit-appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 386.257 386.257" style="enable-background:new 0 0 386.257 386.257;" xml:space="preserve"><polygon points="0,96.879 193.129,289.379 386.257,96.879 "/></svg>');
+  background-repeat: no-repeat, repeat;
+  background-position: right .2em top 50%, 0 0;
+  background-size: 1em;
+}
+
+.noBorderInput:focus, .dropDownStyle:focus, .removeButton:focus, #toDoCreateTaskButton:focus, .clearListButton:focus {
+  outline: none;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+  margin: 0.5em 0em;
+}
+
+.card {
+  display: flex;
+  flex-flow: row nowrap;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 10px 2px lightgrey;
+  margin: 0.5em 0em;
+}
+
+.cardMainPanel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  padding: 0em;
+  width: 100%;
+}
+
+.cardRemovePanel {
+  display: none;
+  width: 3em;
+  border-left: medium solid lightgray;
+  background: url('data:image/svg+xml;charset=US-ASCII,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="459px" height="459px" viewBox="0 0 459 459" fill="gray" style="enable-background:new 0 0 459 459;" xml:space="preserve"><g> <g id="delete">  <path d="M76.5,408c0,28.05,22.95,51,51,51h204c28.05,0,51-22.95,51-51V102h-306V408z M408,25.5h-89.25L293.25,0h-127.5l-25.5,25.5 H51v51h357V25.5z"/> </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>') no-repeat center;
+  background-size: 1.2em 1.2em;
+}
+
+.card:hover > .cardRemovePanel {
+  display: block;
+}
+
+.cardText, .cardTextEditor {
+  padding: 0.25em 0em;
+  margin: 1em 0em;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.cardTimeSection {
+  padding: 1em 1.5em;
+  margin: 0em;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.cardTimeCreated, .cartTimeCompleted {
+  margin: 0em;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.cardTimeCreated {
+  color: darkgrey;
+  margin-bottom: 0.5em;
+}
+
+.cartTimeCompleted {
+  color: black;
+}
+
+#toDoMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px;
+}
+
+#toDoHeaderWrapper {
+  background-color: #2196f3;
+  padding: 0em 7em;
+  align-self: stretch;
+  display: flex;
+}
+
+#toDoHeaderContainer {
+  background-color: #2196f3;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+}
+
+#toDoHeaderTitle {
+  color: white;
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+#toDoHeaderSearchInput {
+  font-family: sans-serif;
+  font-size: 18px;
+  width: 15vw;
+  min-width: 10em;
+  border-bottom: thin solid whitesmoke;
+  background-color: #2196f3;
+  color: white;
+  background: url('data:image/svg+xml;charset=US-ASCII,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="white" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve"><g><g><path d="M508.874,478.708L360.142,329.976c28.21-34.827,45.191-79.103,45.191-127.309c0-111.75-90.917-202.667-202.667-202.667 S0,90.917,0,202.667s90.917,202.667,202.667,202.667c48.206,0,92.482-16.982,127.309-45.191l148.732,148.732 c4.167,4.165,10.919,4.165,15.086,0l15.081-15.082C513.04,489.627,513.04,482.873,508.874,478.708z M202.667,362.667 c-88.229,0-160-71.771-160-160s71.771-160,160-160s160,71.771,160,160S290.896,362.667,202.667,362.667z"/></g></g></svg>') no-repeat;
+  background-position: right 0.5em top 50%, 0 0;
+  background-size: 1em;
+}
+
+#toDoHeaderSearchInput::placeholder {
+  color: white;
+}
+
+#toDoBodyWrapper {
+  padding: 0em 7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
+#toDoBodyWrapper > * {
+  max-width: 700px;
+}
+
+#toDoCreateTaskContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 1em 1em;
+  width: 100%; 
+  justify-content: space-between;
+}
+
+#toDoCreateTaskInput {
+  flex: 1 1 0;
+  margin: 1em;
+  border-bottom: thin solid lightgrey;
+  background-color: white;
+  color: darkgray;
+  font-family: sans-serif;
+  font-size: 14pt;
+}
+
+#toDoCreateTaskInput::placeholder {
+  color: grey;
+}
+
+#toDoCreateTaskButton {
+  margin: 1em;
+  padding: 0.5em 1.5em;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 2px 3px 1px lightgrey;
+  transition: all 1s ease-out;
+  font-family: sans-serif;
+  font-size: 14pt;
+}
+
+#toDoCreateTaskButton:hover {
+  box-shadow: 0 2px 10px 3px lightgrey;
+  transition: all 1s ease-out;
+}
+
+#toDoOpenSectionContainer, #toDoClosedSectionContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  margin: 0.5em 0em;
+}
+
+#toDoOpenSectionHeader, #toDoClosedSectionHeader {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.taskListFooter {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin: 0.5em 0em 2em; 
+}
+
+.clearListButton {
+  border: none;
+  padding: 0em;
+  background-color: white;
+  font-family: sans-serif;
+  font-size: 12pt;
+  text-decoration: underline;
+}
+
+/* Checkbox styling */
+.checkboxContainer {
+  margin: 1.5em 1.5em;
+  min-width: 1.5em;
+  min-height: 1.5em;
+  max-width: 1.5em;
+  max-height: 1.5em;
+
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  border: solid #2196f3;
+  background-color: white;
+  border-radius: 0.25em;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxContainer .checkmark:after {
+  left: 0.5em;
+  top: 0.15em;
+  width: 0.4em;
+  height: 0.8em;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 900px) {
+  #toDoHeaderWrapper {
+    padding: 0em 2em;
+  }
+  #toDoBodyWrapper {
+    padding: 0em 2em;
+  }
 }
