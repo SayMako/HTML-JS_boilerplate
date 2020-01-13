@@ -32,15 +32,9 @@ TaskListPresenter.prototype.setTasksRenderView = function(tasksRenderView) {
     this.taskList.updateTask(taskDetails);
   };
 
-  this.tasksRenderView.setTaskTransferHandler(
-    this.onTaskTransferRequested.bind(this),
-  );
-  this.tasksRenderView.setTaskRemovalHandler(
-    this.onTaskRemovalRequested.bind(this),
-  );
-  this.tasksRenderView.setTaskUpdateHandler(
-    this.onTaskUpdateRequested.bind(this),
-  );
+  this.tasksRenderView.setTaskTransferHandler(this.onTaskTransferRequested.bind(this));
+  this.tasksRenderView.setTaskRemovalHandler(this.onTaskRemovalRequested.bind(this));
+  this.tasksRenderView.setTaskUpdateHandler(this.onTaskUpdateRequested.bind(this));
 };
 
 TaskListPresenter.prototype.setTasksSortingView = function(tasksSortingView) {
@@ -52,9 +46,7 @@ TaskListPresenter.prototype.setTasksSortingView = function(tasksSortingView) {
   };
 
   this.localStorageManager.loadState(tasksSortingView, this.tasksStatus);
-  this.tasksSortingView.setSortingChangedHandler(
-    this.onTasksSortingChanged.bind(this),
-  );
+  this.tasksSortingView.setSortingChangedHandler(this.onTasksSortingChanged.bind(this));
 };
 
 TaskListPresenter.prototype.setTasksSearchView = function(tasksSearchView) {
@@ -64,9 +56,7 @@ TaskListPresenter.prototype.setTasksSearchView = function(tasksSearchView) {
     this.renderTasks();
   };
 
-  this.tasksSearchView.setSearchTriggeredHandler(
-    this.onTasksSearchTriggered.bind(this),
-  );
+  this.tasksSearchView.setSearchTriggeredHandler(this.onTasksSearchTriggered.bind(this));
 };
 
 TaskListPresenter.prototype.setTaskCreateView = function(taskCreateView) {
@@ -100,8 +90,6 @@ TaskListPresenter.prototype.getTaskList = function() {
   return this.taskList;
 };
 
-TaskListPresenter.prototype.setStatusToPresenterMap = function(
-  statusToPresenterMap,
-) {
+TaskListPresenter.prototype.setStatusToPresenterMap = function(statusToPresenterMap) {
   this.statusToPresenterMap = statusToPresenterMap;
 };

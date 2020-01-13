@@ -56,9 +56,7 @@ TasksRenderView.prototype.renderTasks = function(tasks) {
   function initCardEvents(card, task) {
     card
       .querySelector('.cardCheckBox')
-      .addEventListener('change', e =>
-        this.requestTaskTransfer(e, task.getId()),
-      );
+      .addEventListener('change', e => this.requestTaskTransfer(e, task.getId()));
     card
       .querySelector('.cardRemovePanel')
       .addEventListener('click', () => this.requestTaskRemoval(task.getId()));
