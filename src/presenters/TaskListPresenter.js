@@ -1,4 +1,4 @@
-import TaskListModel from '../models/TaskModelList.js';
+import TaskListModel from '../models/TaskListModel.js';
 import LocalStorageManager from '../LocalStorageManager.js';
 
 export default function TaskListPresenter(tasksStatus) {
